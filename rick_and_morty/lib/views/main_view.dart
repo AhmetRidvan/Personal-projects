@@ -5,6 +5,6 @@ class MainView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('Rick and Morty',)));
+    return Scaffold(appBar: AppBar(title: Text('Rick and Morty')));
   }
 }
