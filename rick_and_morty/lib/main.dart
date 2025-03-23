@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeSettings().lightTheme,
       debugShowCheckedModeBanner: false,
       routerConfig: router,
-
     );
   }
 }
