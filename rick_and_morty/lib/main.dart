@@ -5,7 +5,7 @@ import 'package:rick_and_morty/views/main_view.dart';
 
 void main() {
   runApp(MyApp());
-} //44:08
+} //0:36
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

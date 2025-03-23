@@ -18,7 +18,7 @@ class Paths {
 }
 
 class Ssl {
-  StatefulShellBranch hi(String p, Widget w1,) {
+  StatefulShellBranch hi(String p, Widget w1) {
     return StatefulShellBranch(
       routes: [
         GoRoute(
@@ -28,22 +28,23 @@ class Ssl {
           },
         ),
       ],
-
     );
   }
 }
 
-final router = GoRouter( initialLocation: Paths.locations,
+final router = GoRouter(
+  navigatorKey: _key,
+  initialLocation: Paths.characters,
   routes: [
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) {
         return MainView(nS: navigationShell);
       },
       branches: [
-        Ssl().hi(Paths.characters, CharactesrsView(), ),
-        Ssl().hi(Paths.favorites, FavoritesView(), ),
-        Ssl().hi(Paths.locations, LocationsView(), ),
-        Ssl().hi(Paths.sections, SectionsView(), ),
+        Ssl().hi(Paths.characters, CharactesrsView()),
+        Ssl().hi(Paths.favorites, FavoritesView()),
+        Ssl().hi(Paths.locations, LocationsView()),
+        Ssl().hi(Paths.sections, SectionsView()),
       ],
     ),
   ],
