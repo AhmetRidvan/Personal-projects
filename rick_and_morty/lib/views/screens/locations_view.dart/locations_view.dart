@@ -5,6 +5,6 @@ class LocationsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('lokasyonlar'));
+    return Center(child: Text('Lokasyonlar'));
   }
 }

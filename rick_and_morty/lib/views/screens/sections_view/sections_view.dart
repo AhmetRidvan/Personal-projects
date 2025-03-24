@@ -5,6 +5,6 @@ class SectionsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('sectonlar'));
+    return Center(child: Text('Sectonlar'));
   }
 }
