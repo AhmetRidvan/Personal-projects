@@ -5,7 +5,7 @@ import 'package:rick_and_morty/route/app_routes.dart';
 import 'package:rick_and_morty/views/app_wiev.dart';
 
 void main() {
-  runApp(MyApp());// 18
+  runApp(MyApp());// 3.40
 }
 
 class MyApp extends StatelessWidget {

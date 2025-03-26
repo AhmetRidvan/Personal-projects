@@ -7,18 +7,39 @@ class CharactesrsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [search(context), Character_cardview()]),
+      body: Column(
+        children: [
+          search(context),
+          Character_cardview(
+            image: 'https://rickandmortyapi.com/api/character/avatar/734.jpeg',
+            name: "Rick sanchez",
+            origin: 'Earth - (C137)',
+            status: 'Yaşıyor',
+            type: 'İnsan',
+          ),
+          Character_cardview(
+            image: 'https://rickandmortyapi.com/api/character/avatar/734.jpeg',
+            name: "Rick sanchez",
+            origin: 'Earth - (C137)',
+            status: 'Yaşıyor',
+            type: 'İnsan',
+          ),
+        ],
+      ),
     );
   }
 
-  TextField search(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(
-        prefixIcon: Icon(Icons.search),
-        suffixIcon: IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)),
-        border: OutlineInputBorder(borderSide: BorderSide()),
-        labelText: 'Karakterde Ara',
-        labelStyle: TextStyle(color: Theme.of(context).colorScheme.onSurface),
+  Padding search(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(13),
+      child: TextField(
+        decoration: InputDecoration(
+          prefixIcon: Icon(Icons.search),
+          suffixIcon: IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)),
+          border: OutlineInputBorder(borderSide: BorderSide()),
+          labelText: 'Karakterde Ara',
+          labelStyle: TextStyle(color: Theme.of(context).colorScheme.onSurface),
+        ),
       ),
     );
   }
