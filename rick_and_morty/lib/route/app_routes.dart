@@ -28,7 +28,7 @@ final AppRoutes = GoRouter(
                 return ChangeNotifierProvider(
                   child: CharactesrsView(),
                   create: (context) {
-                    return CharactersViewModel(); //35:30
+                    return CharactersViewModel(); 
                   },
                 );
               },

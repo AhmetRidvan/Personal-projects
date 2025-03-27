@@ -7,7 +7,7 @@ import 'package:rick_and_morty/views/app_wiev.dart';
 
 void main() {
   setupGetIt();
-  runApp(MyApp()); // 9:50
+  runApp(MyApp()); // 35:30
 }
 
 class MyApp extends StatelessWidget {
