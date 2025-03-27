@@ -1,1 +1,5 @@
 factory Json'dan nesne üretmeye yarar
+
+MVVM = {
+    view ile model arasında viewmodel olur. Aralarında köprü görevi görür.
+}

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rick_and_morty/views/screens/characters_view/characters_view.dart';
+import 'package:rick_and_morty/views/screens/characters_view/characters_view_model.dart';
 import 'package:rick_and_morty/views/screens/favorites_view/favorites_view.dart';
 import 'package:rick_and_morty/views/screens/locations_view.dart/locations_view.dart';
 import 'package:rick_and_morty/views/app_wiev.dart';
 import 'package:rick_and_morty/views/screens/sections_view/sections_view.dart';
+import 'package:provider/provider.dart';
 
 final ke = GlobalKey<NavigatorState>();
 
@@ -23,7 +25,12 @@ final AppRoutes = GoRouter(
             GoRoute(
               path: '/',
               builder: (context, state) {
-                return CharactesrsView();
+                return ChangeNotifierProvider(
+                  child: CharactesrsView(),
+                  create: (context) {
+                    return CharactersViewModel(); //35:30
+                  },
+                );
               },
             ),
           ],

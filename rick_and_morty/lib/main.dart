@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty/app/getIt.dart';
 
 import 'package:rick_and_morty/app/theme_settings.dart';
 import 'package:rick_and_morty/route/app_routes.dart';
 import 'package:rick_and_morty/views/app_wiev.dart';
 
 void main() {
+  setupGetIt();
   runApp(MyApp()); // 9:50
 }
 

@@ -1,3 +1,20 @@
+class CharactersModel {
+  final CharacterInfo info;
+  final List<CharacterModel> character;
+
+  CharactersModel({required this.info, required this.character});
+
+  factory CharactersModel.fromJson(Map<String, dynamic> js) {
+    final info = CharacterInfo.fromJson(js['info']); 
+    final characters = 
+        (js['results'] as List).map((e) { 
+          return CharacterModel.fromJson(e); 
+        }).toList(); 
+
+    return CharactersModel(info: info, character: characters); 
+  }
+}
+
 class CharacterInfo {
   final int count;
   final int pages;
