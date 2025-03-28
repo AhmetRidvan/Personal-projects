@@ -1,17 +1,17 @@
 class CharactersModel {
   final CharacterInfo info;
-  final List<CharacterModel> character;
+  final List<CharacterModel> characters;
 
-  CharactersModel({required this.info, required this.character});
+  CharactersModel({required this.info, required this.characters});
 
   factory CharactersModel.fromJson(Map<String, dynamic> js) {
-    final info = CharacterInfo.fromJson(js['info']); 
-    final characters = 
-        (js['results'] as List).map((e) { 
-          return CharacterModel.fromJson(e); 
-        }).toList(); 
+    final info = CharacterInfo.fromJson(js['info']);
+    final characters =
+        (js['results'] as List).map((e) {
+          return CharacterModel.fromJson(e);
+        }).toList();
 
-    return CharactersModel(info: info, character: characters); 
+    return CharactersModel(info: info, characters: characters);
   }
 }
 
@@ -42,6 +42,7 @@ class CharacterModel {
   final int id;
   final String name;
   final String status;
+  final String species;
   final String gender;
   final String image;
   final Location location;
@@ -52,6 +53,7 @@ class CharacterModel {
     required this.id,
     required this.name,
     required this.status,
+    required this.species,
     required this.gender,
     required this.image,
     required this.location,
@@ -64,6 +66,7 @@ class CharacterModel {
       id: js['id'],
       name: js['name'],
       status: js['status'],
+      species: js['species'],
       gender: js['gender'],
       image: js['image'],
       location: Location(
@@ -71,7 +74,7 @@ class CharacterModel {
         url: js['location']['url'],
       ),
       origin: Origin(name: js['origin']['name'], url: js['origin']['url']),
-      episode: js['episode'],
+      episode: List<String>.from(js['episode']),
     );
   }
 }

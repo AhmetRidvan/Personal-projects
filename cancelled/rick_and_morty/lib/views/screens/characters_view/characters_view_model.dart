@@ -4,7 +4,6 @@ import 'package:rick_and_morty/models/character_model.dart';
 import 'package:rick_and_morty/services/api_service.dart';
 
 class CharactersViewModel extends ChangeNotifier {
-  //33
   final _apiService = locator<ApiService>();
 
   CharactersModel? _charactersModel;
@@ -16,5 +15,6 @@ class CharactersViewModel extends ChangeNotifier {
   void getCharacters() async {
     _charactersModel = await _apiService.getCharacters();
     notifyListeners();
+    print("here!");
   }
 }

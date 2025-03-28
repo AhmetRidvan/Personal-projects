@@ -1,19 +1,10 @@
+import 'package:rick_and_morty/models/character_model.dart';
+
 import 'package:flutter/material.dart';
 
 class Character_cardview extends StatelessWidget {
-  const Character_cardview({
-    super.key,
-    required this.image,
-    required this.name,
-    required this.origin,
-    required this.status,
-    required this.type,
-  });
-  final String image;
-  final String name;
-  final String origin;
-  final String status;
-  final String type;
+  Character_cardview({super.key, required this.cModel});
+  CharacterModel cModel;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +28,7 @@ class Character_cardview extends StatelessWidget {
                     fit: BoxFit.cover,
                     height: 110,
                     width: 110,
-                    image,
+                    cModel.image,
                   ),
                 ),
 
@@ -50,16 +41,19 @@ class Character_cardview extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        name,
+                        cModel.name,
                         style: TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                       SizedBox(height: 5),
-                      _infoWidget(type: 'Köken', value: origin),
+                      _infoWidget(type: 'Köken', value: cModel.origin.name),
                       SizedBox(height: 5),
-                      _infoWidget(type: 'Durum', value: '$status - $type'),
+                      _infoWidget(
+                        type: 'Durum',
+                        value: '${cModel.status} & ${cModel.species}',
+                      ),
                     ],
                   ),
                 ),
